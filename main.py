@@ -31,3 +31,9 @@ def clean_text(text):
     return text
 data['clean_text']=data['text'].apply(clean_text)
 print(data[["text", "clean_text"]].head(10))
+data.to_csv(
+    "arabic_reviews_clean.csv",
+    index=False,
+    encoding="utf-8-sig"
+)
+print("Clean data saved successfully!")
