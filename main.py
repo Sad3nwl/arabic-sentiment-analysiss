@@ -3,7 +3,7 @@ import pandas as pd
 import seaborn as sns
 import matplotlib.pyplot as plt
 data=pd.read_csv('arabic_reviews.csv')
-# ========== INFO ABOUT DATA ==========
+# ========================================== DATA UNDERSTANDING
 print(data.head(5))
 print('='*10)
 print(data.info())
@@ -18,6 +18,7 @@ print(data.isnull().sum())
 print('Total missing values:')
 print(data.isnull().sum().sum())
 print("Duplicate rows:",data.duplicated().sum())
+# =================================================TEXT CLEANING
 def clean_text(text):
     text=re.sub(r"http\S+|www\S+", "", text)
     text=re.sub(r"<.*?>","",text)
