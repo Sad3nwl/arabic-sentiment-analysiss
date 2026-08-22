@@ -32,9 +32,12 @@ def clean_text(text):
     return text
 data['clean_text']=data['text'].apply(clean_text)
 print(data[["text", "clean_text"]].head(10))
-data.to_csv(
-    "arabic_reviews_clean.csv",
+data.drop(columns=["text"], inplace=True)
+small_data = data.sample(n=5000, random_state=42)
+
+small_data.to_csv(
+    "arabic_reviews_small.csv",
     index=False,
     encoding="utf-8-sig"
 )
-print("Clean data saved successfully!")
+
