@@ -30,6 +30,17 @@ for label in data['label_text'].unique():
 short = data[data['len'] < 10]
 print("number of short word", len(short))
 print(short[['clean_text', 'label_text']].head(10))
-data['has_elongation'] = data['clean_text'].str.contains(r'(.)\1{2,}', regex=True)
+def has_elongation(text):
+    return bool(re.search(r'(.)\1{2,}', str(text)))
+data['has_elongation'] = data['clean_text'].apply(has_elongation)
 print("Percentage of texts containing repeated letters", data['has_elongation'].mean().round(3))
 print(data.groupby('label_text')['has_elongation'].mean())
+plt.figure(figsize=(8, 5))
+sns.histplot(
+    data=data, x='len', hue='label_text',
+    bins=60, element='step', stat='density', common_norm=False
+)
+plt.xlim(0, data['len'].quantile(0.95))
+plt.title('توزيع طول النص حسب الفئة')
+plt.savefig('length_by_label_hist.png', dpi=150)
+plt.show()
