@@ -14,3 +14,19 @@ sns.boxplot(data,x='label_text', y='len',color='#FF69B4')
 plt.ylim(0, data['len'].quantile(0.95))
 plt.title('توزيع طول النص حسب الفئة')
 plt.show()
+
+stopwords = {"من","في","على","الى","إلى","عن","مع","هذا","هذه","التي",
+             "الذي","كان","كانت","هو","هي","أن","إن","لا","لم","ما"}
+
+def top_words(texts, n=15):
+    words = []
+    for t in texts:
+        words.extend(re.findall(r'[\u0600-\u06FF]+', str(t)))
+    words = [w for w in words if w not in stopwords and len(w) > 1]
+    return Counter(words).most_common(n)
+
+for label in data['label_text'].unique():
+    subset = data.loc[data['label_text'] == label, 'clean_text']
+    print(f"\n=== {label} ===")
+    for word, count in top_words(subset):
+        print(word, count)
