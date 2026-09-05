@@ -36,8 +36,7 @@ data = data[data['clean_text'].str.len() > 0].reset_index(drop=True)
 print(f"removed {before - len(data)} empty rows after cleaning")
 
 data.drop(columns=["text"], inplace=True)
-small_data = data.sample(n=5000, random_state=42)
-
+ 
 data.to_csv(
     "arabic_reviews_clean.csv",
     index=False,
