@@ -18,7 +18,7 @@
 تنظيف خفيف يناسب طبيعة البيانات: إزالة الروابط، وسوم HTML، والتشكيل، مع
 حذف أي صف يصبح فاضياً بعد التنظيف. النتيجة: `arabic_reviews_clean.csv`.
 
-### 3. التحليل الاستكشافي (`eda.py`)
+### 3. التحليل الاستكشافي (`Eda02.py`)
 - توزيع الفئات وطول النص لكل فئة (رسومات seaborn/matplotlib).
 - أكثر الكلمات تكراراً لكل فئة.
 - فحص النصوص القصيرة جداً وظاهرة تكرار الحروف (زي "روووعة").
@@ -26,13 +26,13 @@
   ("لكن"، "بس"، "ولا")، ما يؤكد إنها فعلاً تمثل تضارب حقيقي بالمشاعر
   وليست فئة عشوائية أو محايدة.
 
-### 4. التقسيم الطبقي (`split_data.py`)
+### 4. التقسيم الطبقي (`split_data03.py`)
 تقسيم stratified حسب `label_text` لضمان نفس نسبة الفئات (33.3%) بكل جزء:
 - Train: 80% (80,000 صف تقريباً)
 - Validation: 10%
 - Test: 10%
 
-### 5. بناء الموديل الأساسي (`train_model.py`)
+### 5. بناء الموديل الأساسي (`train04.py`)
 - تحويل النص إلى متجهات عددية بـ **TF-IDF** (unigrams + bigrams).
 - تدريب **Logistic Regression** كخط أساس (`class_weight='balanced'`).
 - **النتيجة:** F1-macro = 0.678 على مجموعة الاختبار.
@@ -83,9 +83,9 @@ tfidf_vectorizer_improved.pkl  # الـ vectorizer المرافق للموديل
 
 ```bash
 python data_cleaning.py
-python eda.py
-python split_data.py
-python train_improved.py   # الموديل النهائي المعتمد
+python Eda02.py
+python split_data03.py
+python train04.py   # الموديل النهائي المعتمد
 ```
 
 ## أهم الدروس المستفادة
