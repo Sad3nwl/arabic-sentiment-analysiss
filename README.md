@@ -1,4 +1,3 @@
-# arabic-sentiment-analysiss
 # تصنيف المشاعر للمراجعات العربية (Arabic Sentiment Analysis)
 
 مشروع تعلم آلي كلاسيكي لتصنيف مراجعات عربية (كتب/فنادق) إلى ثلاث فئات:
