@@ -64,16 +64,7 @@
 **الموديل المُعتمد:** Logistic Regression المحسّن — أبسط من الـ Ensemble
 وبنفس الأداء تقريباً (0.680 مقابل 0.681).
 
-```
-
-
-train_model.py          # تدريب Logistic Regression الأساسي
-train_svm.py            # تجربة LinearSVC
-train_improved.py       # النسخة المحسّنة (معالجة نفي + GridSearchCV)
-train_ensemble.py       # تجربة VotingClassifier
-sentiment_model_improved.pkl   # الموديل النهائي المعتمد
-tfidf_vectorizer_improved.pkl  # الـ vectorizer المرافق للموديل النهائي
-```
+ 
 
 ## طريقة التشغيل
 
