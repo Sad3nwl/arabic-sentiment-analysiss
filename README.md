@@ -66,7 +66,6 @@
 
 ```
 
-eda.py                  # التحليل الاستكشافي والرسومات
 split_data.py           # تقسيم train/val/test بطريقة stratified
 train_model.py          # تدريب Logistic Regression الأساسي
 train_svm.py            # تجربة LinearSVC
