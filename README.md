@@ -65,7 +65,7 @@
 وبنفس الأداء تقريباً (0.680 مقابل 0.681).
 
 ```
-data_cleaning.py       # تنظيف الداتا الخام -> arabic_reviews_clean.csv
+
 eda.py                  # التحليل الاستكشافي والرسومات
 split_data.py           # تقسيم train/val/test بطريقة stratified
 train_model.py          # تدريب Logistic Regression الأساسي
