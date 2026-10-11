@@ -29,7 +29,6 @@
 - Train: 80% (80,000 صف تقريباً)
 - Validation: 10%
 - Test: 10%
-
 ### 5. بناء الموديل الأساسي (`train04.py`)
 - تحويل النص إلى متجهات عددية بـ **TF-IDF** (unigrams + bigrams).
 - تدريب **Logistic Regression** كخط أساس (`class_weight='balanced'`).
