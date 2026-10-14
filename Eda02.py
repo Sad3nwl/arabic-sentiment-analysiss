@@ -38,8 +38,7 @@ print(data.groupby('label_text')['has_elongation'].mean())
 plt.figure(figsize=(8, 5))
 sns.histplot(
     data=data, x='len', hue='label_text',
-    bins=60, element='step', stat='density', common_norm=False
-)
+    bins=60, element='step', stat='density', common_norm=False)
 plt.xlim(0, data['len'].quantile(0.95))
 plt.title('توزيع طول النص حسب الفئة')
 plt.savefig('length_by_label_hist.png', dpi=150)
