@@ -1,24 +1,19 @@
 # ============================================
 # Arabic Sentiment Analysis - Requirements
 # ============================================
-#..
 # Core Data Processing
 pandas==2.1.4
 numpy==1.26.3
-
 # Data Visualization
 matplotlib==3.8.2
 seaborn==0.13.1
-
 # Deep Learning / NLP (AraBERT fine-tuning)
 torch==2.2.0
 transformers==4.38.2
 datasets==2.17.1
 tokenizers==0.15.2
 arabert==1.0.1
-
 # Classic ML (baseline models / metrics)
 scikit-learn==1.4.0
-
 # Utilities
 tqdm==4.66.1
