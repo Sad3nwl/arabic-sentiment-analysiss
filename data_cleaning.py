@@ -19,7 +19,7 @@ print(data.isnull().sum().sum())
 print("Duplicate rows:", data.duplicated().sum())
 
 
-# =================================================TEXT CLEANING
+# =====================================TEXT CLEANING
 def clean_text(text):
     text = re.sub(r"http\S+|www\S+", "", text)
     text = re.sub(r"<.*?>", "", text)
