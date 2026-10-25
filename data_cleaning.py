@@ -2,7 +2,7 @@
 import re
 import pandas as pd
 data = pd.read_csv('arabic_reviews.csv')
-# ========================================== DATA UNDERSTANDING
+# =============================== DATA UNDERSTAND
 print(data.head(5))
 print('=' * 10)
 print(data.info())
